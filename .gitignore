@@ -1,0 +1,7 @@
+# leettui — keep local app state / secrets out of version control
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+session.json
+config.toml
