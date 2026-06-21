@@ -1,5 +1,17 @@
 # Greedy Algorithm
 
+<!--toc:start-->
+- [Greedy Algorithm](#greedy-algorithm)
+  - [The Basic Idea](#the-basic-idea)
+  - [Beginner Explanation](#beginner-explanation)
+  - [How to Recognize a Greedy Problem](#how-to-recognize-a-greedy-problem)
+  - [The Two Properties That Make Greedy Safe](#the-two-properties-that-make-greedy-safe)
+  - [High-Level Pseudocode (Generic Greedy)](#high-level-pseudocode-generic-greedy)
+  - [Common Greedy Patterns in LeetCode](#common-greedy-patterns-in-leetcode)
+  - [Greedy vs. Dynamic Programming](#greedy-vs-dynamic-programming)
+  - [Problems That Use This Pattern](#problems-that-use-this-pattern)
+<!--toc:end-->
+
 ## The Basic Idea
 
 A greedy algorithm builds a solution **one step at a time**, always making the choice that looks best *right now* — without reconsidering past decisions or looking ahead.
@@ -21,6 +33,7 @@ Greedy works when the problem has a property called **optimal substructure** + *
 ## How to Recognize a Greedy Problem
 
 Look for these signals in the problem statement:
+
 - "maximize the **number** of..." or "minimize the **number** of..."
 - You need to select or schedule items with a limited resource (budget, time, capacity)
 - Items can be considered independently — choosing one doesn't complicate other choices

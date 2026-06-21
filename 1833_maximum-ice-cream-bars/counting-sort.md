@@ -13,12 +13,14 @@ Counting sort takes a completely different approach: instead of comparing, it **
 Say you have: `[3, 1, 2, 1, 3]` and values range from 1 to 3.
 
 **Step 1 — Build a frequency array:**
+
 ```
 index:  1  2  3
 freq:   2  1  2    ← "1 appears 2x, 2 appears 1x, 3 appears 2x"
 ```
 
 **Step 2 — Read it back in order:**
+
 ```
 index 1 → output "1" twice  → [1, 1]
 index 2 → output "2" once   → [1, 1, 2]
@@ -52,6 +54,7 @@ return result
 ## When Can You Use It?
 
 Counting sort only works when:
+
 1. Values are **integers** (you can't use a float as an array index)
 2. The **range of values is known and reasonably small** — you need to allocate a frequency array of that size
 
