@@ -2,16 +2,38 @@ public class Solution
 {
     public int RearrangeCharacters(string s, string target)
     {
-        var sCount = s.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
-        var targetCount = target.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+        // var sCount = s.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+        // var targetCount = target.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+        //
+        // var result = int.MaxValue;
+        //
+        // foreach (var (character, count) in targetCount)
+        // {
+        //     if (!sCount.ContainsKey(character))
+        //         return 0;
+        //     result = Math.Min(result, sCount[character] / count);
+        // }
+        //
+        // return result;
 
-        var result = int.MaxValue;
+        const int MAX_LETTERS = 26;
 
-        foreach (var (character, count) in targetCount)
+        int[] sCount = new int[MAX_LETTERS];
+        int[] targetCount = new int[MAX_LETTERS];
+
+        foreach (char c in s)
+            sCount[c - 'a']++;
+        foreach (char c in target)
+            targetCount[c - 'a']++;
+
+        int result = int.MaxValue;
+
+        for (int i = 0; i < MAX_LETTERS; i++)
         {
-            if (!sCount.ContainsKey(character))
-                return 0;
-            result = Math.Min(result, sCount[character] / count);
+            if (targetCount[i] > 0)
+            {
+                result = Math.Min(result, sCount[i] / targetCount[i]);
+            }
         }
 
         return result;
